@@ -1,0 +1,26 @@
+[
+  {
+    "id": 15,
+    "nestId": 1,
+    "name": "SA-MP",
+    "dockerImage": "ghcr.io/parkervcp/eggs.games:samp",
+    "startup": "./samp03svr",
+    "environment": {}
+  },
+  {
+    "id": 16,
+    "nestId": 1,
+    "name": "Node.js Generic",
+    "dockerImage": "ghcr.io/parkervcp/yolks:nodejs_18",
+    "startup": "npm install && npm run start",
+    "environment": {}
+  },
+  {
+    "id": 17,
+    "nestId": 1,
+    "name": "Python Generic",
+    "dockerImage": "ghcr.io/parkervcp/yolks:python_3.11",
+    "startup": "pip install -r requirements.txt && python main.py",
+    "environment": {}
+  }
+]

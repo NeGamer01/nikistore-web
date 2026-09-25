@@ -1,0 +1,59 @@
+[
+  {
+    "id": "starter-store",
+    "slug": "starter-store",
+    "title": "Starter Digital Store",
+    "subtitle": "Toko produk digital Next.js siap deploy.",
+    "description": "Source code toko digital dengan katalog, detail produk, checkout, payment QRIS, dan halaman download.",
+    "price": 149000,
+    "promoPrice": 99000,
+    "category": "Web App",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    "stack": ["Next.js", "Vercel", "QRIS"],
+    "includes": ["Full source code", "Struktur Vercel", "Checkout QRIS", "Dokumentasi setup"],
+    "highlights": ["App Router", "Server API", "Payment polling"],
+    "downloadEnvKey": "DOWNLOAD_STARTER_STORE_URL"
+  },
+  {
+    "id": "whatsapp-bot-kit",
+    "slug": "whatsapp-bot-kit",
+    "title": "WhatsApp Bot Kit",
+    "subtitle": "Template bot order, menu, dan auto-reply.",
+    "description": "Source code bot WhatsApp modular untuk katalog, order otomatis, dan integrasi API eksternal.",
+    "price": 99000,
+    "category": "Bot",
+    "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80",
+    "stack": ["Node.js", "Baileys", "API"],
+    "includes": ["Command handler", "Session guide", "Config template", "Deploy notes"],
+    "highlights": ["Multi command", "Auto reply", "JSON config"],
+    "downloadEnvKey": "DOWNLOAD_WHATSAPP_BOT_URL"
+  },
+  {
+    "id": "dashboard-saas",
+    "slug": "dashboard-saas",
+    "title": "SaaS Dashboard",
+    "subtitle": "Panel admin analytics dan member area.",
+    "description": "Dashboard SaaS dengan tabel data, metrik, autentikasi dasar, dan layout admin responsif.",
+    "price": 179000,
+    "category": "Dashboard",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+    "stack": ["React", "Charts", "Auth"],
+    "includes": ["Admin layout", "Component set", "Dummy data", "Responsive views"],
+    "highlights": ["Metric cards", "Data table", "Settings page"],
+    "downloadEnvKey": "DOWNLOAD_DASHBOARD_SAAS_URL"
+  },
+  {
+    "id": "topup-panel",
+    "slug": "topup-panel",
+    "title": "Topup Panel",
+    "subtitle": "Panel topup produk digital dengan API provider.",
+    "description": "Starter panel topup untuk layanan digital, invoice, status transaksi, dan integrasi provider.",
+    "price": 129000,
+    "category": "Commerce",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+    "stack": ["Next.js", "REST API", "Invoice"],
+    "includes": ["Order flow", "Invoice UI", "Provider adapter", "Status checker"],
+    "highlights": ["API adapter", "Invoice", "QRIS-ready"],
+    "downloadEnvKey": "DOWNLOAD_TOPUP_PANEL_URL"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "server-1",
+    "name": "Niki Server 1",
+    "location": "Indonesia (Jakarta)",
+    "panelUrl": "panel.domainkamu.com",
+    "locationId": 1,
+    "nestId": 1,
+    "eggId": 15,
+    "maxPanels": 50
+  }
+]
