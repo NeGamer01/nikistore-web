@@ -8,7 +8,9 @@
     "start": "next start",
     "product:add": "node scripts/add-product.mjs",
     "vercel:env": "node scripts/sync-vercel-env.mjs production",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+  "cpanel:build": "next build",
+  "cpanel:start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

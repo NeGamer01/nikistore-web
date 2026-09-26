@@ -1,0 +1,16 @@
+# Tolak semua akses HTTP ke database dan file internal.
+# SQLite + settings tidak boleh bisa didownload publik.
+
+# Apache 2.4+ (cPanel/LiteSpeed memahami ini)
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
+
+# LiteSpeed juga hormati ini
+Options -Indexes

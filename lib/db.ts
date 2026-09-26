@@ -10,14 +10,33 @@ import fs from "fs";
 let db: Database.Database | null = null;
 
 function dbPath(): string {
-  const dir = process.env.DB_DIR || path.join(process.cwd(), "data");
-  fs.mkdirSync(dir, { recursive: true });
-  return path.join(dir, process.env.DB_NAME || "store.db");
+  const base = process.env.DB_DIR || path.join(process.cwd(), "data");
+  fs.mkdirSync(base, { recursive: true });
+  return path.join(base, process.env.DB_NAME || "store.db");
+}
+
+// cPanel/Phusion Passenger bisa memulai app dari cwd yang berbeda.
+// Simpan DB di bawah application root, bukan di cwd transient passenger.
+function resolveDbPath(): string {
+  const fromEnv = process.env.DB_DIR;
+  if (fromEnv) {
+    fs.mkdirSync(fromEnv, { recursive: true });
+    return path.join(fromEnv, process.env.DB_NAME || "store.db");
+  }
+  return dbPath();
 }
 
 export function getDb(): Database.Database {
   if (!db) {
-    db = new Database(dbPath());
+    try {
+      db = new Database(resolveDbPath());
+    } catch (err) {
+      // Fallback: coba lokasi yang pasti writable di home hosting.
+      const home = process.env.HOME || process.cwd();
+      const fallback = path.join(home, "nikistore-data");
+      fs.mkdirSync(fallback, { recursive: true });
+      db = new Database(path.join(fallback, process.env.DB_NAME || "store.db"));
+    }
     db.pragma("journal_mode = WAL");
     db.pragma("foreign_keys = ON");
     migrate(db);

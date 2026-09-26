@@ -3,3 +3,12 @@ node_modules
 .env
 .env*.local
 dist
+
+# SQLite database + WAL/SHM (jangan pernah commit)
+data/store.db
+data/store.db-wal
+data/store.db-shm
+nikistore-data/
+
+# Passenger/cPanel
+.passenger.tmp
